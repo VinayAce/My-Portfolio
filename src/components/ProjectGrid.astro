@@ -1,0 +1,106 @@
+---
+import { ExternalLink } from "@lucide/astro";
+
+const projects = [
+  {
+    name: "ProtectUs AI Security Assistant",
+    domain: "Mobile Security SDK / Banking Protection",
+    role: "Principal Engineer / Technical Lead",
+    stack: "Python, FastAPI, Gemini 2.5 Flash, Prompt Engineering, Rule Engine, JSON APIs, iOS, Android",
+    impact: "Rule-first and GenAI-assisted security decisioning for ambiguous SMS, call, and browser threat cases, returning structured BLOCK, WARN, or ALLOW outputs.",
+    links: [{ label: "Case Study", href: "https://expleo.com/global/en/case-studies/expleoprotectus-complete-solution/" }]
+  },
+  {
+    name: "Sydney Health App",
+    domain: "Healthcare",
+    role: "Lead Application Engineer",
+    stack: "Swift, Objective-C, Flutter, Node.js, MongoDB, REST APIs",
+    impact: "Contributed to mobile and backend delivery for a large-scale healthcare product, with modular architecture and reliable release coordination.",
+    links: [
+      { label: "App Store", href: "https://apps.apple.com/us/app/sydney-health/id1463423283" },
+      { label: "Elevance", href: "https://www.elevancehealth.com/" }
+    ]
+  },
+  {
+    name: "Bounce App",
+    domain: "IoT Mobility / Bike Rental",
+    role: "Senior Mobile App Engineer",
+    stack: "Swift, Objective-C, Google Maps SDK, Firebase Crashlytics, Node.js, REST APIs",
+    impact: "Built core iOS mobility workflows from scratch, including trip booking, real-time GPS, maps, notifications, and offline reliability.",
+    links: [
+      { label: "Play Store", href: "https://play.google.com/store/apps/details?id=com.bouncedaily.app&hl=en_IN" },
+      { label: "WickedRide", href: "https://wickedride.in/" }
+    ]
+  },
+  {
+    name: "InfyMe",
+    domain: "Enterprise Employee App",
+    role: "Lead Mobile Application Developer",
+    stack: "Objective-C, Swift, Core Data, REST APIs, Jira, Git",
+    impact: "Delivered enterprise iOS features serving 200K+ employees across performance, events, payroll, and employee service modules.",
+    links: [{ label: "Play Store", href: "https://play.google.com/store/apps/details?id=com.infosys.it.infosysitapp&hl=en_IN" }]
+  },
+  {
+    name: "NimNim Laundry",
+    domain: "Operations / Commerce",
+    role: "Mobile App Developer",
+    stack: "Objective-C, Swift, REST APIs, Git",
+    impact: "Led end-to-end iOS development for customer and driver apps supporting laundry operations in the USA.",
+    links: [{ label: "Website", href: "https://www.getnimnim.com/home" }]
+  },
+  {
+    name: "VOW Cabs",
+    domain: "Taxi / Mobility",
+    role: "Mobile App Developer",
+    stack: "Objective-C, Swift, Maps, Payments, REST APIs",
+    impact: "Built taxi operation modules for Sri Lanka, including maps, location services, and payment integration.",
+    links: []
+  },
+  {
+    name: "Camp Gladiator",
+    domain: "Fitness",
+    role: "Mobile Engineer",
+    stack: "Mobile Engineering, REST APIs, Product Delivery",
+    impact: "Contributed to fitness product delivery with mobile engineering practices grounded in release quality and user-facing reliability.",
+    links: []
+  },
+  {
+    name: "WallPostERP",
+    domain: "Enterprise CRM / Workflow",
+    role: "Mobile App Developer",
+    stack: "Objective-C, Swift, Java, REST APIs, Git",
+    impact: "Delivered CRM modules for HR, task management, finance tracking, and enterprise workflow use cases.",
+    links: [{ label: "Website", href: "https://wallpostsoftware.com/global/" }]
+  }
+];
+---
+
+<div class="grid gap-4 md:grid-cols-2">
+  {projects.map((project) => (
+    <article class="surface reveal rounded-lg p-6">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="eyebrow">{project.domain}</p>
+          <h3 class="mt-3 font-display text-2xl font-extrabold">{project.name}</h3>
+        </div>
+        {project.links.length > 0 && (
+          <a class="button button-quiet size-10 shrink-0 p-0" href={project.links[0].href} target="_blank" rel="noreferrer" aria-label={`Open ${project.name}`}>
+            <ExternalLink size={17} />
+          </a>
+        )}
+      </div>
+      <p class="mt-4 text-sm font-semibold text-[color:var(--accent)]">{project.role}</p>
+      <p class="mt-4 text-sm leading-7 text-[color:var(--muted)]">{project.impact}</p>
+      <p class="mt-5 text-xs font-semibold uppercase leading-6 text-[color:var(--muted)]">Stack: {project.stack}</p>
+      {project.links.length > 0 && (
+        <div class="mt-5 flex flex-wrap gap-2">
+          {project.links.map((link) => (
+            <a class="chip transition hover:border-[color:var(--accent)] hover:text-[color:var(--text)]" href={link.href} target="_blank" rel="noreferrer">
+              {link.label}<ExternalLink class="ml-2" size={13} />
+            </a>
+          ))}
+        </div>
+      )}
+    </article>
+  ))}
+</div>

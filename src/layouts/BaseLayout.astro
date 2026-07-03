@@ -1,0 +1,58 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Vinay Reddy | Technical Lead, Mobile, Full Stack, Applied AI",
+  description = "Premium portfolio for Vinay Reddy, a Technical Lead and Principal Engineer with 11+ years across mobile engineering, full stack, applied AI, GenAI, architecture, and product engineering."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#080a0f" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/hero-architecture.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://vinayace.github.io/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <script is:inline>
+      const root = document.documentElement;
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme) root.dataset.theme = storedTheme;
+
+      document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+          root.dataset.theme = nextTheme;
+          localStorage.setItem("theme", nextTheme);
+        });
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.14 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+---
+const experiences = [
+  {
+    company: "Expleo Global Solutions",
+    role: "Principal Engineer / Technical Lead",
+    period: "Jun 2025 - Present",
+    summary: "Key contributor to ProtectUs, a security-focused mobile SDK integrated with banking applications for Ireland-based clients.",
+    impact: ["Architecting Android and iOS SDK capabilities for call blocking, message filtering, and browser-level threat prevention.", "Extending mobile ownership into AI-assisted security analysis and intelligent decision support.", "Collaborating with product, backend, QA, and client stakeholders on production-ready SDK releases."],
+    tech: "Applied GenAI, Agentic AI, FastAPI, iOS, Android, SDK Development, Swift, Flutter/Native Mobile, Backend APIs, Security SDK, Agile"
+  },
+  {
+    company: "Carelon Global Solutions",
+    role: "Lead Application Engineer & Backend Interface Implementation",
+    period: "2020 - 2024",
+    summary: "Contributed to mobile and backend delivery for Sydney Health, a large-scale Elevance Health product used by millions.",
+    impact: ["Architected modular mobile codebases and improved delivery through clean coding practices, mentoring, and reviews.", "Integrated iOS, Flutter, and Node.js modules while optimizing backend communication.", "Partnered with product, UX, QA, and backend teams across sprint planning, estimation, and release coordination."],
+    tech: "Swift, Objective-C, Flutter, Node.js, MongoDB, REST APIs, Git, Agile, Healthcare Domain, Applied GenAI, Python, FastAPI, LLMs"
+  },
+  {
+    company: "Infosys",
+    role: "Lead System Engineer / Lead Mobile Application Developer",
+    period: "2019",
+    summary: "Developed features for InfyMe, an enterprise app serving 200K+ employees across performance, events, payroll, and employee services.",
+    impact: ["Delivered iOS features using MVC architecture.", "Participated in stakeholder demos, client reviews, and App Store deployment activities."],
+    tech: "Objective-C, Swift, Core Data, REST APIs, Jira, Git"
+  },
+  {
+    company: "Bounce / Metro Bikes",
+    role: "Senior Mobile App Engineer",
+    period: "2017 - 2018",
+    summary: "Built Bounce App and WickedRide from scratch with founders and core product teams for IoT mobility and bike rental workflows.",
+    impact: ["Led full iOS development for trip booking, real-time GPS, maps, push notifications, and offline reliability.", "Defined scalable API contracts and set up crash monitoring and analytics for product quality."],
+    tech: "Swift, Objective-C, Google Maps SDK, Firebase Crashlytics, Node.js, REST APIs, Git, IoT Mobility"
+  },
+  {
+    company: "Codesnbytes Solutions",
+    role: "Mobile App Developer",
+    period: "2015 - 2017",
+    summary: "Delivered end-to-end iOS products across laundry operations, taxi modules, CRM workflows, maps, payments, and enterprise use cases.",
+    impact: ["Led iOS development for NimNim Laundry and Driver apps supporting USA operations.", "Built VOW Cabs modules for Sri Lanka taxi operations and WallPostERP modules for HR, tasks, finance, and workflow management."],
+    tech: "Objective-C, Swift, Java, REST APIs, Git, Maps, Payments"
+  }
+];
+---
+
+<div class="relative mx-auto max-w-4xl">
+  <div class="absolute left-4 top-0 hidden h-full w-px bg-[color:var(--line)] md:block"></div>
+  <div class="grid gap-5">
+    {experiences.map((item) => (
+      <article class="reveal relative md:pl-12">
+        <span class="absolute left-[9px] top-7 hidden size-3 rounded-full bg-[color:var(--accent)] ring-8 ring-[color:var(--bg)] md:block"></span>
+        <div class="surface rounded-lg p-6">
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <h3 class="font-display text-xl font-extrabold">{item.company}</h3>
+              <p class="mt-1 font-semibold text-[color:var(--accent)]">{item.role}</p>
+            </div>
+            <span class="chip whitespace-nowrap">{item.period}</span>
+          </div>
+          <p class="mt-4 text-sm leading-7 text-[color:var(--muted)]">{item.summary}</p>
+          <ul class="mt-4 grid gap-2 text-sm leading-7 text-[color:var(--muted)]">
+            {item.impact.map((point) => <li class="pl-4 [text-indent:-1rem]"><span class="text-[color:var(--accent-3)]">&bull;</span> {point}</li>)}
+          </ul>
+          <p class="mt-4 text-xs font-semibold uppercase leading-6 text-[color:var(--muted)]">Tech Stack: {item.tech}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+</div>

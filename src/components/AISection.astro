@@ -1,0 +1,39 @@
+---
+const aiWork = [
+  {
+    title: "ProtectUs AI Security Assistant",
+    type: "Rule-assisted GenAI decisioning",
+    points: ["Known spam and blacklisted indicators handled by a rule engine first.", "Gemini-based reasoning for ambiguous SMS, call, and browser threat cases.", "Structured JSON API outputs with decision, red flags, and explanation fields."]
+  },
+  {
+    title: "Insurance Risk Predictor",
+    type: "ML risk scoring service",
+    points: ["Traditional AI service for insurance claim risk and fraud probability.", "Exposes model predictions through REST APIs for downstream workflows.", "Built with practical service boundaries for product integration."]
+  },
+  {
+    title: "Healthcare Knowledge Assistant / RAG Concept",
+    type: "Retrieval-grounded assistant design",
+    points: ["Healthcare assistant concept for trusted medical or policy documents.", "RAG-style retrieval, embeddings, vector search, and safety disclaimers.", "Designed for grounded LLM answers and healthcare product thinking."]
+  }
+];
+---
+
+<div class="grid gap-4 lg:grid-cols-3">
+  {aiWork.map((item) => (
+    <article class="surface reveal rounded-lg p-6">
+      <p class="eyebrow">{item.type}</p>
+      <h3 class="mt-3 font-display text-xl font-extrabold">{item.title}</h3>
+      <ul class="mt-5 grid gap-3 text-sm leading-7 text-[color:var(--muted)]">
+        {item.points.map((point) => <li class="pl-4 [text-indent:-1rem]"><span class="text-[color:var(--accent)]">&bull;</span> {point}</li>)}
+      </ul>
+    </article>
+  ))}
+</div>
+
+<div class="surface reveal mt-5 rounded-lg p-6">
+  <div class="flex flex-wrap gap-2">
+    {["FastAPI AI services", "LLM integration", "Prompt engineering", "JSON API outputs", "RAG", "Vector search", "ML risk scoring", "Rule engines", "AI product thinking"].map((skill) => (
+      <span class="chip">{skill}</span>
+    ))}
+  </div>
+</div>

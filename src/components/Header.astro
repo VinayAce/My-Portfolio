@@ -1,0 +1,30 @@
+---
+import { BriefcaseBusiness, CodeXml, Mail, Moon, Phone, Sun } from "@lucide/astro";
+
+const navItems = [
+  ["About", "#about"],
+  ["Experience", "#experience"],
+  ["Projects", "#projects"],
+  ["AI", "#ai"],
+  ["Contact", "#contact"]
+];
+---
+
+<header class="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[color:color-mix(in_srgb,var(--bg)_78%,transparent)] backdrop-blur-xl">
+  <nav class="container flex h-16 items-center justify-between">
+    <a href="#top" class="font-display text-base font-extrabold tracking-normal">Vinay Reddy</a>
+    <div class="hidden items-center gap-6 text-sm font-semibold text-[color:var(--muted)] md:flex">
+      {navItems.map(([label, href]) => <a class="transition hover:text-[color:var(--text)]" href={href}>{label}</a>)}
+    </div>
+    <div class="flex items-center gap-2">
+      <a aria-label="GitHub" class="button button-quiet hidden size-12 p-0 sm:inline-flex" href="https://github.com/vinayace" target="_blank" rel="noreferrer"><CodeXml size={23} stroke-width={2.25} /></a>
+      <a aria-label="LinkedIn" class="button button-quiet hidden size-12 p-0 sm:inline-flex" href="https://linkedin.com/in/vinay-reddy-2b44a4144" target="_blank" rel="noreferrer"><BriefcaseBusiness size={23} stroke-width={2.25} /></a>
+      <a aria-label="Email" class="button button-quiet size-12 p-0" href="mailto:vinayreddy.ace@gmail.com"><Mail size={23} stroke-width={2.25} /></a>
+      <a aria-label="Phone" class="button button-quiet hidden size-12 p-0 sm:inline-flex" href="tel:+919513368689"><Phone size={23} stroke-width={2.25} /></a>
+      <button aria-label="Toggle theme" class="button button-quiet size-12 p-0" data-theme-toggle>
+        <Sun class="hidden [html[data-theme=dark]_&]:block" size={23} stroke-width={2.25} />
+        <Moon class="[html[data-theme=dark]_&]:hidden" size={23} stroke-width={2.25} />
+      </button>
+    </div>
+  </nav>
+</header>

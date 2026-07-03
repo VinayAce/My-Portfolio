@@ -1,0 +1,9 @@
+---
+const { eyebrow, title, copy } = Astro.props;
+---
+
+<div class="mx-auto mb-10 max-w-3xl text-center reveal">
+  <p class="eyebrow">{eyebrow}</p>
+  <h2 class="mt-3 font-display text-3xl font-extrabold tracking-normal text-[color:var(--text)] md:text-5xl">{title}</h2>
+  {copy && <p class="mt-4 text-base leading-8 text-[color:var(--muted)] md:text-lg">{copy}</p>}
+</div>

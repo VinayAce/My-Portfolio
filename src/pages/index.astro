@@ -1,0 +1,90 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import CapabilityGrid from "../components/CapabilityGrid.astro";
+import ExperienceTimeline from "../components/ExperienceTimeline.astro";
+import ProjectGrid from "../components/ProjectGrid.astro";
+import AISection from "../components/AISection.astro";
+import ResumeCTA from "../components/ResumeCTA.astro";
+import ContactSection from "../components/ContactSection.astro";
+---
+
+<BaseLayout>
+  <Header />
+  <main>
+    <Hero />
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+          <div class="reveal">
+            <p class="eyebrow">About</p>
+            <h2 class="mt-3 font-display text-3xl font-extrabold md:text-5xl">Technical ownership from mobile platforms to AI-enabled products.</h2>
+          </div>
+          <div class="surface reveal rounded-lg p-6 md:p-8">
+            <p class="text-lg leading-9 text-[color:var(--muted)]">
+              I am a Principal Engineer with 11+ years of experience delivering iOS, Flutter, Android, backend, full-stack, and AI-powered products across healthcare, mobile security, IoT mobility, fitness, enterprise, and commerce-style platforms. My core strength is mobile engineering with Swift, Objective-C, Flutter, SDK development, and mobile architecture, expanded into Node.js, Express.js, Next.js, FastAPI, and product/backend ownership.
+            </p>
+            <p class="mt-5 text-lg leading-9 text-[color:var(--muted)]">
+              I bring a senior engineering mindset to architecture, release planning, stakeholder collaboration, sprint execution, mentoring, and production readiness. My recent applied AI work includes rule-assisted GenAI security analysis, traditional ML risk scoring, RAG-style knowledge assistants, LLM integration, prompt engineering, agentic AI, and AI product solution design.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities" class="section">
+      <div class="container">
+        <SectionHeader eyebrow="Technical Capabilities" title="A senior engineering toolkit for product-grade systems." copy="Grounded in mobile architecture and broadened across backend services, applied AI, cloud delivery, and technical leadership." />
+        <CapabilityGrid />
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <SectionHeader eyebrow="Featured Experience" title="Impact across healthcare, security, mobility, and enterprise products." copy="Concise highlights from roles where architecture, delivery, stakeholder alignment, and production quality mattered." />
+        <ExperienceTimeline />
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <SectionHeader eyebrow="Selected Projects / Products" title="Products built for real users, teams, and business workflows." copy="A focused project showcase across AI security, healthcare, IoT mobility, enterprise apps, operations, taxi, fitness, and CRM products." />
+        <ProjectGrid />
+      </div>
+    </section>
+
+    <section id="ai" class="section">
+      <div class="container">
+        <SectionHeader eyebrow="Applied AI Engineering" title="Practical AI work with product boundaries, APIs, and decision quality." copy="AI experience positioned around usable services: rule-assisted GenAI, ML risk scoring, RAG-style assistants, prompt engineering, and structured outputs." />
+        <AISection />
+      </div>
+    </section>
+
+    <section id="building" class="section">
+      <div class="container">
+        <div class="surface reveal rounded-lg p-8 md:p-10">
+          <p class="eyebrow">Currently Building</p>
+          <h2 class="mt-3 font-display text-3xl font-extrabold md:text-4xl">Active builder, still open to the right leadership role.</h2>
+          <p class="mt-4 max-w-3xl text-lg leading-8 text-[color:var(--muted)]">
+            Currently exploring AI-powered product ideas in healthcare, organic lifestyle commerce, and intelligent automation. More details will be shared after launch.
+          </p>
+          <p class="mt-5 max-w-3xl leading-8 text-[color:var(--muted)]">
+            Alongside that exploration, I am open to strong technical leadership opportunities where mobile engineering depth, full-stack ownership, applied AI thinking, and architectural judgment can compound into meaningful products.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <ResumeCTA />
+    <ContactSection />
+  </main>
+  <footer class="border-t border-white/10 py-8">
+    <div class="container flex flex-col gap-3 text-sm text-[color:var(--muted)] sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; 2026 Vinay Reddy. Technical Lead | Mobile | Full Stack | Applied AI.</p>
+      <a class="font-semibold text-[color:var(--text)]" href="#top">Back to top</a>
+    </div>
+  </footer>
+</BaseLayout>

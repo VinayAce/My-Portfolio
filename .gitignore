@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.astro/
+.vercel/
+.netlify/
+.env
+.env.*
+.DS_Store
+.venv-pdf/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.idea/
+.vscode/
